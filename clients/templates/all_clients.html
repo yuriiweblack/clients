@@ -1,23 +1,17 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Clients</title>
-</head>
-<body style="background-color: yellow; text-align: start">
-    <h1>Our clients</h1>
+{% extends "master.html" %}
 
+{% block title %}
+    List of all clients!
+{% endblock %}
+
+
+{% block content %}
+    <h1>Our clients</h1>
     <ol>
     {% for x in clients %}
         <li>
-            <a href="details/{{x.id}}">
-                {{ x.firstname}} {{ x.lastname}}
-            </a>
+            <a href="details/{{x.id}}">{{ x.firstname}} {{ x.lastname}}</a>
         </li>
     {% endfor %}
     </ol>
-</body>
-</html>
+{% endblock %}
