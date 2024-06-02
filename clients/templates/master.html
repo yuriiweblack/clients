@@ -1,36 +1,47 @@
-<!doctype html>
+{% load static %}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
     <title>{% block title %} {% endblock %}</title>
 </head>
-<body style="background-color: yellow; text-align: start">
+<body>
 
     <header class="header">
-        <a href="/" class="logo">WEBBLACK</a>
-        <nav class="menu">
-            <ul class="menu__list">
-                <li class="menu__list-item">
-                    <a class="menu__list-link" href="/">HOME</a>
-                </li>
-                <li class="menu__list-item">
-                    <a class="menu__list-link" href="https://www.linkedin.com/pulse/model-view-controller-overview-nitin-rangarajan" target="_blank">ABOUT</a>
-                </li>
-                <li class="menu__list-item">
-                    <a class="menu__list-link" href="#">PROJECT</a>
-                </li>
-                <li class="menu__list-item">
-                    <a class="menu__list-link" href="#">CONTACT</a>
-                </li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="header__inner">
+                <a href="/" class="logo">WEBBLACK</a>
+                <nav class="menu">
+                    <ul class="menu__list">
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" href="/">HOME</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" href="https://www.linkedin.com/pulse/model-view-controller-overview-nitin-rangarajan" target="_blank">ABOUT</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" href="#">PROJECT</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" href="#">CONTACT</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
     <main class="main">
-        {% block content %}
-        {% endblock %}
+        <div class="container">
+            <div class="main__inner">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
     </main>
     <footer class="footer">
 

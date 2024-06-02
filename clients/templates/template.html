@@ -5,9 +5,11 @@
     <title>Testing</title>
 </head>
 <body>
-
+    {% with firstname="Jek++" %}
+    <h1>Hello {{ firstname }}, how are you? </h1>
+    {% endwith %}
     {% for item in fruits %}
-        <h1>{{ item }}</h1>
+        <h2>{{ item }}</h2>
     {% endfor%}
 
     <h3 style="color: green">Testing was successful!</h3>

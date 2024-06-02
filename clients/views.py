@@ -32,6 +32,6 @@ def main(request):
 def testing(request):
     template = loader.get_template('template.html')
     context = {
-        'fruits': ['Apple', 'Cherry', 'Banana']
+        'firstname': 'Linux'
     }
-    return HttpResponse(template.render(context,request))
+    return HttpResponse(template.render(context, request))
