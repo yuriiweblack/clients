@@ -1,18 +1,47 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
     <title>Testing</title>
 </head>
 <body>
+    {{len_firstname}}
+    {% for item in clients %}
+<!--        <h2>{{ item.id }} {{ item.firstname }}</h2>-->
+        <h2>{{ item }}</h2>
+    <hr>
+    {% endfor%}
+
+    {% if firstname == "Linux" and 5 == 5 %}
+        <h2>Hello, {{firstname}}!</h2>
+    {% endif %}
+
+    {% if 'Lanos' not in cars %}
+    <ul>
+        <h2>Salon: </h2>
+        {% for i in cars %}
+            <li>{{forloop.revcounter}} {{i}}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <h2>Salon closed!!!</h2>
+    {% endif%}
+
+    {#  <h3>Comment</h3> #}
+    <h2>Salon closed!!!{# Salon_1 #}</h2>
+
+
+
+    <h3 style="color: green">Testing was successful!</h3>
     {% with firstname="Jek++" %}
     <h1>Hello {{ firstname }}, how are you? </h1>
     {% endwith %}
-    {% for item in fruits %}
-        <h2>{{ item }}</h2>
-    {% endfor%}
 
-    <h3 style="color: green">Testing was successful!</h3>
+    {% include 'footer.html' with t="TELEGRAM" f="FACEBOOK"%}
+
+
 
 </body>
 </html>
